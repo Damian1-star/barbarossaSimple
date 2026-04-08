@@ -182,7 +182,7 @@ h2 span { color: var(--text-muted); }
 }
 
 .wellness-video {
-    width: 100%;
+    width: 20%;
     display: block;
     filter: grayscale(20%); /* Jemný filter pre prémiový vzhľad */
 }
