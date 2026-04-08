@@ -168,60 +168,59 @@ h2 span { color: var(--text-muted); }
 
 /* Wellness Media Sekcia */
 .wellness-gallery {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Video je širšie, fotky užšie */
     gap: 15px;
+    align-items: start;
 }
 
 .media-container {
     width: 100%;
+    max-width: none; /* Zrušíme to predchádzajúce obmedzenie, grid to podrží */
     border: 1px solid var(--border);
     border-radius: 4px;
     overflow: hidden;
+    height: 100%; /* Aby video vyplnilo výšku, ak treba */
 }
 
 .wellness-video {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video sa pekne prispôsobí */
     display: block;
-    filter: grayscale(20%); /* Jemný filter pre prémiový vzhľad */
 }
 
-.photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.photo-column {
+    display: flex;
+    flex-direction: column; /* Fotky pod seba */
     gap: 15px;
 }
 
 .wellness-img {
     width: 100%;
-    height: 250px;
-    object-fit: cover; /* Oreže fotku tak, aby vyplnila priestor */
+    height: calc(250px + 7px); /* Dynamická výška, aby ladila s medzerou videa */
+    object-fit: cover;
     border: 1px solid var(--border);
     border-radius: 4px;
-    transition: transform 0.3s ease;
-}
-
-.wellness-img:hover {
-    transform: scale(1.02);
-    border-color: var(--accent);
-}
-
-.media-container {
-    max-width: 500px; /* Tu nastavíš konkrétnu šírku, napr. 500px alebo 50% */
-    margin: 0 auto;  /* Toto video vycentruje */
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
 }
 
 /* Responzivita pre mobil */
-@media (max-width: 600px) {
-    .photo-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .wellness-gallery {
+        grid-template-columns: 1fr; /* Všetko v jednom stĺpci */
     }
+
+    .photo-column {
+        order: 2; /* Fotky pôjdu pod video */
+    }
+
+    .media-container {
+        order: 1; /* Video bude hore */
+    }
+
     .wellness-img {
-        height: 200px;
+        height: 250px;
     }
 }
 
