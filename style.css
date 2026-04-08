@@ -182,7 +182,7 @@ h2 span { color: var(--text-muted); }
 }
 
 .wellness-video {
-    width: 20%;
+    width: 100%;
     display: block;
     filter: grayscale(20%); /* Jemný filter pre prémiový vzhľad */
 }
@@ -205,6 +205,14 @@ h2 span { color: var(--text-muted); }
 .wellness-img:hover {
     transform: scale(1.02);
     border-color: var(--accent);
+}
+
+.media-container {
+    max-width: 500px; /* Tu nastavíš konkrétnu šírku, napr. 500px alebo 50% */
+    margin: 0 auto;  /* Toto video vycentruje */
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 /* Responzivita pre mobil */
