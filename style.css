@@ -1,0 +1,172 @@
+    <style>
+        :root {
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --border: #1a1a1a;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --accent: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header & Logo */
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            width: 80px; /* Upravené na rozumnú veľkosť */
+            height: auto;
+            filter: brightness(0) invert(1); /* Ak je logo tmavé, toto ho spraví bielym */
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px 0;
+        }
+
+        /* Sekcie */
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
+
+        h2 span { color: var(--text-muted); }
+
+        /* Cenník */
+        .pricing-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.1rem;
+        }
+
+        .pricing-item.highlight {
+            color: var(--text-main);
+            font-weight: bold;
+            border-left: 3px solid white;
+            padding-left: 15px;
+        }
+
+        /* Recenzie */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .stars { margin-bottom: 15px; font-size: 0.9rem; }
+        .review-content { font-style: italic; color: #ccc; margin-bottom: 25px; }
+
+        .reviewer { display: flex; align-items: center; gap: 15px; }
+        .avatar {
+            width: 40px; height: 40px; background: #222;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-weight: bold; font-size: 0.8rem;
+        }
+
+        .reviewer-info .name { display: block; font-weight: bold; font-size: 0.9rem; }
+        .reviewer-info .date { font-size: 0.75rem; color: var(--text-muted); }
+
+        /* Tlačidlá & Siete */
+        .social-box {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            border: 1px solid var(--border);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+
+        .btn-google {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            border: 1px solid #333;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Info Grid */
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            border-top: 1px solid var(--border);
+            padding-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .info-section { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
